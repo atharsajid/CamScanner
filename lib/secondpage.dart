@@ -110,7 +110,7 @@ class _SecondpageState extends State<Secondpage> {
               child: new Icon(
                 Icons.image,
               ),
-              backgroundColor: Colors.indigo[900],
+              backgroundColor: Colors.black,
               onPressed: getImageFromGallery,
             ),
           ),
@@ -121,7 +121,7 @@ class _SecondpageState extends State<Secondpage> {
               child: new Icon(
                 Icons.camera,
               ),
-              backgroundColor: Colors.indigo[900],
+              backgroundColor: Colors.black,
               onPressed: getImageFromcamera,
             ),
           ),
@@ -131,7 +131,7 @@ class _SecondpageState extends State<Secondpage> {
   }
 
   getImageFromGallery() async {
-    final pickedFile = await picker.getImage(source: ImageSource.gallery);
+    final pickedFile = await picker.pickImage(source: ImageSource.gallery);
     _image = File(pickedFile!.path);
 
     setState(() {

@@ -63,7 +63,7 @@ class _FirstpageState extends State<Firstpage> {
               child: new Icon(
                 Icons.image,
               ),
-              backgroundColor: Colors.indigo[900],
+              backgroundColor: Colors.black,
               onPressed: getImageFromGallery,
             ),
           ),
@@ -74,7 +74,7 @@ class _FirstpageState extends State<Firstpage> {
               child: new Icon(
                 Icons.camera,
               ),
-              backgroundColor: Colors.indigo[900],
+              backgroundColor: Colors.black,
               onPressed: getImageFromcamera,
             ),
           ),
@@ -84,7 +84,7 @@ class _FirstpageState extends State<Firstpage> {
   }
 
   getImageFromGallery() async {
-    final pickedFile = await picker.getImage(source: ImageSource.gallery);
+    final pickedFile = await picker.pickImage(source: ImageSource.gallery);
     setState(() {
       if (pickedFile != null) {
         image.add(File(pickedFile.path));
@@ -95,7 +95,7 @@ class _FirstpageState extends State<Firstpage> {
   }
 
   getImageFromcamera() async {
-    final pickedFile = await picker.getImage(source: ImageSource.camera);
+    final pickedFile = await picker.pickImage(source: ImageSource.camera);
     setState(() {
       if (pickedFile != null) {
         image.add(File(pickedFile.path));
@@ -138,7 +138,6 @@ class _FirstpageState extends State<Firstpage> {
         ),
       );
     }
-
     return await doc.save();
   }
 }

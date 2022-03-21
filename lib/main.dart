@@ -33,7 +33,7 @@ class _HomeState extends State<Home> {
       length: 3,
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.indigo[900],
+          backgroundColor: Colors.black,
           bottom: const TabBar(
             tabs: [
               Tab(
@@ -48,7 +48,7 @@ class _HomeState extends State<Home> {
             ],
           ),
           title: Text(
-            'Make PDF',
+            'CamScanner',
           ),
         ),
         body: TabBarView(
